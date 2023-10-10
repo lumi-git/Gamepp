@@ -10,8 +10,8 @@
 class Scene {
 
 public:
-    void update();
-    void start();
+    virtual void update(){};
+    virtual void start(){};
     void mandatoryStart();
     void mandatoryUpdate();
 

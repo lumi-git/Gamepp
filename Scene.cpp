@@ -32,11 +32,3 @@ void Scene::removeGameObject(GameObject *gameObject) {
     }
 
 }
-
-void Scene::update() {
-
-}
-
-void Scene::start() {
-
-}

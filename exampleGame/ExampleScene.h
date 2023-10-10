@@ -10,6 +10,10 @@
 
 class ExampleScene : public Scene {
 
+public:
+    void update() override;
+    void start() override;
+
 };
 
 

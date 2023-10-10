@@ -4,3 +4,14 @@
 
 #include "ExampleScene.h"
 #include <SDL2/SDL.h>
+
+void ExampleScene::update() {
+    SDL_Log("ExampleScene::update");
+}
+
+void ExampleScene::start() {
+    Scene::start();
+    for (auto &gameObject : gameObjects) {
+        gameObject->start();
+    }
+}

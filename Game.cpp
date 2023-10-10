@@ -59,12 +59,12 @@ int Game::create() {
 }
 
 int Game::start() {
-    //m_CurrentScene->mandatoryStart();
+    m_CurrentScene->mandatoryStart();
     return SUCCESS;
 }
 
 void Game::update() {
-    //m_CurrentScene->update();
+    m_CurrentScene->update();
 }
 
 void Game::run() {
