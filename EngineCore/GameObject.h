@@ -16,7 +16,7 @@ class GameObject {
         void mandatoryStart();
         void setName(const std::string& name);
         std::string getName();
-        Transform& getTransform();
+        Transform * getTransform();
 
     private:
         std::string m_name;

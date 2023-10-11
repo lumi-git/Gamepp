@@ -3,34 +3,37 @@
 //
 
 #include "Transform.h"
-
+#include <SDL2/SDL.h>
 Transform::Transform() {
-    position = Vector2();
-    scale = Vector2();
-    rotation = 0;
-
+    position = new Vector2();
+    scale = new Vector2();
+    rotation = new double();
 }
 
-Vector2& Transform::getPosition() {
-    return position;
+
+Transform::~Transform() {
 }
 
-void Transform::setPosition(Vector2 newPosition) {
-    position = newPosition;
+Vector2 & Transform::getPosition() {
+    return *position;
 }
 
-void Transform::setScale(Vector2 newScale) {
-    scale = newScale;
+void Transform::setPosition( const Vector2 & newPosition) {
+    *position = newPosition;
 }
 
-Vector2& Transform::getScale() {
-    return scale;
+void Transform::setScale(const Vector2 & newScale) {
+    *scale = newScale;
 }
 
-double& Transform::getRotation() {
-    return rotation;
+Vector2 & Transform::getScale() {
+    return *scale;
 }
 
-void Transform::setRotation(double newRotation) {
+double & Transform::getRotation() {
+    return *rotation;
+}
 
+void Transform::setRotation(const double & newRotation) {
+    *rotation = newRotation;
 }

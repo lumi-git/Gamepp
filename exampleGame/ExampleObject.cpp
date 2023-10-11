@@ -10,8 +10,9 @@ ExampleObject::ExampleObject() {
 }
 
 void ExampleObject::update() {
-    getTransform().setPosition(getTransform().getPosition() + 1);
-    SDL_Log(getTransform().getPosition().toString().c_str());
+
+    getTransform()->setPosition(getTransform()->getPosition() + 1.0);
+    SDL_Log(getTransform()->getPosition().toString().c_str());
 }
 
 void ExampleObject::start() {

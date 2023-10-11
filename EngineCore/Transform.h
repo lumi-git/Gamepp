@@ -10,17 +10,18 @@
 
 class Transform {
 private:
-    Vector2 position;
-    Vector2 scale;
-    double rotation;
+    Vector2 *position;
+    Vector2 *scale;
+    double *rotation;
 public:
     Transform();
-    Vector2& getPosition();
-    void setPosition(Vector2 newPosition);
-    Vector2& getScale();
-    void setScale(Vector2 newScale);
-    double& getRotation();
-    void setRotation(double newRotation);
+    ~Transform();
+    Vector2 & getPosition();
+    void setPosition( const Vector2 & newPosition);
+    Vector2 & getScale();
+    void setScale(const Vector2 & newScale);
+    double & getRotation();
+    void setRotation(const double & newRotation);
 };
 
 

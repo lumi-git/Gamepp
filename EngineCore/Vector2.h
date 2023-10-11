@@ -18,6 +18,8 @@ public:
 
     Vector2();
 
+    ~Vector2();
+
     // vectorials operations
     Vector2 operator+(const Vector2 &other) const;
     Vector2 operator-(const Vector2 &other) const;
@@ -25,10 +27,11 @@ public:
     Vector2 operator/(const Vector2 &other) const;
 
     // scalar operations
-    Vector2 operator*(double scalar) const;
-    Vector2 operator/(double scalar) const;
-    Vector2 operator+(double scalar) const;
-    Vector2 operator-(double scalar) const;
+    Vector2 operator*(const double & scalar) const;
+    Vector2 operator/(const double & scalar) const;
+    Vector2 operator+(const double & scalar) const;
+    Vector2 operator-(double & scalar) const;
+
 
     std::string toString() const;
 
@@ -39,9 +42,9 @@ public:
 
     double getY() const;
 
-    void setX(double x);
+    void setX(const double & x);
 
-    void setY(double y);
+    void setY(const double & y);
 
 };
 

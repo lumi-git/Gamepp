@@ -17,8 +17,8 @@ void GameObject::mandatoryStart() {
     start();
 }
 
-Transform& GameObject::getTransform() {
-    return *m_transform;
+Transform * GameObject::getTransform() {
+    return m_transform;
 }
 
 std::string GameObject::getName() {
