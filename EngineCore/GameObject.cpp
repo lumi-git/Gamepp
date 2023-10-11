@@ -3,7 +3,7 @@
 //
 
 #include "GameObject.h"
-#include <math.h>
+#include <random>
 GameObject::GameObject() {
     m_transform = new Transform();
     setRandomName();
@@ -26,7 +26,7 @@ std::string GameObject::getName() {
 }
 
 void GameObject::setRandomName() {
-    setName("GameObject_"+rand());
+    setName("GameObject_" + std::to_string(rand()));
 }
 
 void GameObject::setName(const std::string& name) {
