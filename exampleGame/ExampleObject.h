@@ -4,10 +4,13 @@
 
 #ifndef SDLBASIC_EXAMPLEOBJECT_H
 #define SDLBASIC_EXAMPLEOBJECT_H
-#include "../GameObject.h"
+#include "../EngineCore/GameObject.h"
 
 class ExampleObject: public GameObject{
-
+public:
+    ExampleObject();
+    void update() override;
+    void start() override;
 };
 
 

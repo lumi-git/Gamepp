@@ -6,10 +6,13 @@
 #define SDLBASIC_EXAMPLESCENE_H
 
 
-#include "../Scene.h"
+#include "../EngineCore/Scene.h"
 
 class ExampleScene : public Scene {
-
+public:
+    ExampleScene();
+    void update() override;
+    void start() override;
 };
 
 

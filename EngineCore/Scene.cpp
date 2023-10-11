@@ -5,7 +5,7 @@
 #include "Scene.h"
 
 void Scene::mandatoryUpdate() {
-    Scene::update();
+    update();
     for (auto &gameObject : gameObjects) {
         gameObject->mandatoryUpdate();
     }
@@ -13,7 +13,7 @@ void Scene::mandatoryUpdate() {
 
 
 void Scene::mandatoryStart() {
-    Scene::start();
+    start();
     for (auto &gameObject : gameObjects) {
         gameObject->mandatoryStart();
     }
@@ -33,10 +33,3 @@ void Scene::removeGameObject(GameObject *gameObject) {
 
 }
 
-void Scene::update() {
-
-}
-
-void Scene::start() {
-
-}

@@ -5,8 +5,8 @@
 #include "Game.h"
 #include <string>
 #include <SDL2/SDL.h>
-#include "utils/ErrorsEnum.h"
-#include "utils/Parameters.h"
+#include "../utils/ErrorsEnum.h"
+#include "../utils/Parameters.h"
 
 Game *Game::m_instance = nullptr;
 
@@ -59,12 +59,12 @@ int Game::create() {
 }
 
 int Game::start() {
-    //m_CurrentScene->mandatoryStart();
+    m_CurrentScene->mandatoryStart();
     return SUCCESS;
 }
 
 void Game::update() {
-    //m_CurrentScene->update();
+    m_CurrentScene->mandatoryUpdate();
 }
 
 void Game::run() {
@@ -176,4 +176,9 @@ const std::string &Game::getWindowName() const {
 
 void Game::setWindowName(const std::string &windowName) {
     m_windowName = windowName;
+}
+
+GameObject * Game::instanciate(GameObject *gameObject) {
+    Game::getInstance()->getCurrentScene().addGameObject(gameObject);
+    return gameObject;
 }

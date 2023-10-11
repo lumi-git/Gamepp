@@ -40,9 +40,11 @@ public:
 
     Scene& getCurrentScene();
 
+    static GameObject * instanciate(GameObject *gameObject);
 
 protected:
     Game(std::string & windowName);
+
 
 private:
     int init();
