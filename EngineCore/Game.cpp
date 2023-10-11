@@ -41,7 +41,7 @@ int Game::init() {
         return -1;
     }
 
-    m_renderer = SDL_CreateRenderer(Game::m_window, -1, SDL_RENDERER_ACCELERATED);
+    m_renderer = SDL_CreateRenderer(Game::m_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
     if (m_renderer == nullptr) {
 
         return DEFAULT_ERROR;
@@ -91,6 +91,7 @@ void Game::run() {
         frameTime = SDL_GetTicks() - frameStart;
 
         if (frameDelay > frameTime) {
+
             SDL_Delay(frameDelay - frameTime);
         }
         Time::getInstance().setDeltaTime(SDL_GetTicks() - frameStart);
@@ -106,10 +107,12 @@ void Game::end() {
 
 void Game::draw() {
     // drow a rectangle and fill it with white
-    m_CurrentScene->mandatoryDraw(m_renderer);
-    SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 255);
-    SDL_RenderPresent(m_renderer);
     SDL_RenderClear(m_renderer);
+    m_CurrentScene->mandatoryDraw(m_renderer);
+
+    SDL_SetRenderDrawColor(m_renderer, 100, 200, 50, 255);
+    SDL_RenderPresent(m_renderer);
+
 }
 
 Game *Game::getInstance() {

@@ -7,15 +7,22 @@
 #include "../Debug/Debug.h"
 #include "../EngineCore/DrawRectComponent.h"
 #include "../EngineCore/Time.h"
+#include "../EngineCore/Game.h"
 
 ExampleObject::ExampleObject(): GameObject() {
 }
 
 void ExampleObject::update() {
-    getTransform()->setPosition(getTransform()->getPosition() + 0.1*Time::getDeltaTime());
+
+    getTransform()->setPosition(Vector2(getTransform()->getPosition().getX() + rand()%3 -1 , getTransform()->getPosition().getY() + rand()%3 -1));
+
+    if(getTransform()->getPosition().getX() > Game::getInstance()->getWindowWidth() || getTransform()->getPosition().getX() < 0 || getTransform()->getPosition().getY() > Game::getInstance()->getWindowHeight() || getTransform()->getPosition().getY() < 0)
+        getTransform()->setPosition(Vector2(Game::getInstance()->getWindowWidth()/2, Game::getInstance()->getWindowHeight()/2));
+
 }
 
 void ExampleObject::start() {
     getTransform()->setScale(Vector2(100,100));
+    getTransform()->setPosition(Vector2(Game::getInstance()->getWindowWidth()/2, Game::getInstance()->getWindowHeight()/2));
     addComponent(new DrawRectComponent(this));
 }

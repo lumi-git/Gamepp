@@ -12,8 +12,10 @@ void ExampleScene::update(){
 }
 
 void ExampleScene::start() {
+    //generation of 20000 objects
     SDL_Log("Starting the example scene");
-    Game::instanciate(new ExampleObject());
+    for(int i = 0; i < 20000; i++)
+        Game::instanciate(new ExampleObject());
 }
 
 ExampleScene::ExampleScene() = default;
