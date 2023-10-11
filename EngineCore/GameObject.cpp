@@ -3,10 +3,10 @@
 //
 
 #include "GameObject.h"
-
+#include <math.h>
 GameObject::GameObject() {
     m_transform = new Transform();
-
+    setRandomName();
 }
 
 void GameObject::mandatoryUpdate() {
@@ -23,6 +23,10 @@ Transform * GameObject::getTransform() {
 
 std::string GameObject::getName() {
     return m_name;
+}
+
+void GameObject::setRandomName() {
+    setName("GameObject_"+rand());
 }
 
 void GameObject::setName(const std::string& name) {

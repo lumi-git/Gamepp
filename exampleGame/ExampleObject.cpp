@@ -4,17 +4,18 @@
 
 #include "ExampleObject.h"
 #include <SDL2/SDL.h>
+#include "../Debug/Debug.h"
+ExampleObject::ExampleObject(): GameObject() {
 
-ExampleObject::ExampleObject() {
 
 }
 
 void ExampleObject::update() {
 
     getTransform()->setPosition(getTransform()->getPosition() + 1.0);
-    SDL_Log(getTransform()->getPosition().toString().c_str());
+    Debug::log(getTransform()->getPosition().toString());
 }
 
 void ExampleObject::start() {
-    SDL_Log("Starting the example object");
+    Debug::log("Starting the object: " + getName());
 }

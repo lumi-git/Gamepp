@@ -19,6 +19,8 @@ class GameObject {
         Transform * getTransform();
 
     private:
+        void setRandomName();
+
         std::string m_name;
         Transform * m_transform;
 
