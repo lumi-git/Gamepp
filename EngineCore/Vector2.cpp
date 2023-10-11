@@ -14,6 +14,8 @@ Vector2::~Vector2() {
 
 }
 
+
+
 Vector2 Vector2::operator+(const Vector2 &other) const {
 
     return {x + other.x, y + other.y};
@@ -53,6 +55,22 @@ double Vector2::dot(const Vector2 &other) const {
 
 std::string Vector2::toString() const {
     return std::to_string(x) + " ; " +std::to_string(y);
+}
+
+double Vector2::getX() const {
+    return x;
+}
+
+double Vector2::getY() const {
+    return y;
+}
+
+void Vector2::setX(const double &newx) {
+    this->x = newx;
+}
+
+void Vector2::setY(const double &newy) {
+    this->y = newy;
 }
 
 

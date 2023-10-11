@@ -14,6 +14,7 @@ void GameObject::mandatoryUpdate() {
 }
 
 void GameObject::mandatoryStart() {
+
     start();
 }
 
@@ -31,4 +32,16 @@ void GameObject::setRandomName() {
 
 void GameObject::setName(const std::string& name) {
     m_name = name;
+}
+
+void GameObject::mandatoryDraw(SDL_Renderer *sdlRenderer) {
+    //Here we can add boundary of the game object based on a config later
+    for (auto &component : m_components) {
+        component->draw(sdlRenderer);
+    }
+    draw(sdlRenderer);
+}
+
+void GameObject::addComponent(Component * component) {
+    m_components.push_back(component);
 }

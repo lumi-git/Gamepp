@@ -12,7 +12,7 @@ const std::string WINDOW_TITLE = "kdo Ronan";
 const int SCREEN_WIDTH = 800;
 const int SCREEN_HEIGHT = 600;
 
-const int SCREEN_FPS = 144;
+const int SCREEN_FPS = 60;
 
 
 

@@ -3,7 +3,7 @@
 //
 
 #include "Scene.h"
-
+#include "../Debug/Debug.h"
 void Scene::mandatoryUpdate() {
     update();
     for (auto &gameObject : gameObjects) {
@@ -29,6 +29,14 @@ void Scene::removeGameObject(GameObject *gameObject) {
             gameObjects.erase(it);
             break;
         }
+    }
+
+}
+
+void Scene::mandatoryDraw(SDL_Renderer *sdlRenderer) {
+    draw(sdlRenderer);
+    for (auto &gameObject : gameObjects) {
+        gameObject->mandatoryDraw(sdlRenderer);
     }
 
 }

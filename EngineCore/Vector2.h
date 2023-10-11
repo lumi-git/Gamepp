@@ -42,9 +42,9 @@ public:
 
     double getY() const;
 
-    void setX(const double & x);
+    void setX(const double & newx);
 
-    void setY(const double & y);
+    void setY(const double & newy);
 
 };
 

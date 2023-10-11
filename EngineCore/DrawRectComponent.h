@@ -6,7 +6,13 @@
 #define SDLBASIC_DRAWRECTCOMPONENT_H
 
 
-class DrawRectComponent {
+#include "Component.h"
+#include "GameObject.h"
+
+class DrawRectComponent: public Component {
+public:
+    DrawRectComponent(GameObject * parent);
+    void draw(SDL_Renderer * sdlRenderer) override;
 
 };
 

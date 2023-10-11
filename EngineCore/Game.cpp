@@ -7,6 +7,8 @@
 #include <SDL2/SDL.h>
 #include "../utils/ErrorsEnum.h"
 #include "../utils/Parameters.h"
+#include "Time.h"
+#include "../Debug/Debug.h"
 
 Game *Game::m_instance = nullptr;
 
@@ -68,10 +70,12 @@ void Game::update() {
 }
 
 void Game::run() {
-    const int frameDelay = 1000 / m_fps;
+    const double frameDelay = 1000 / m_fps;
 
     Uint32 frameStart;
-    int frameTime;
+    double frameTime;
+
+
     while (true) {
 
         frameStart = SDL_GetTicks();
@@ -82,14 +86,15 @@ void Game::run() {
                 break;
             }
         }
-
-        Game::draw();
         Game::update();
+        Game::draw();
         frameTime = SDL_GetTicks() - frameStart;
 
         if (frameDelay > frameTime) {
             SDL_Delay(frameDelay - frameTime);
         }
+        Time::getInstance().setDeltaTime(SDL_GetTicks() - frameStart);
+
     }
 }
 
@@ -101,13 +106,10 @@ void Game::end() {
 
 void Game::draw() {
     // drow a rectangle and fill it with white
-    SDL_Rect rect = {100, 100, 100, 100};
-    SDL_SetRenderDrawColor(m_renderer, 255, 255, 255, 255);
-    SDL_RenderFillRect(m_renderer, &rect);
+    m_CurrentScene->mandatoryDraw(m_renderer);
     SDL_SetRenderDrawColor(m_renderer, 0, 0, 0, 255);
     SDL_RenderPresent(m_renderer);
     SDL_RenderClear(m_renderer);
-
 }
 
 Game *Game::getInstance() {
