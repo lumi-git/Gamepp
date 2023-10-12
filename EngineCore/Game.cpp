@@ -41,7 +41,7 @@ int Game::init() {
         return -1;
     }
 
-    m_renderer = SDL_CreateRenderer(Game::m_window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
+    m_renderer = SDL_CreateRenderer(Game::m_window, -1, SDL_RENDERER_ACCELERATED);
     if (m_renderer == nullptr) {
 
         return DEFAULT_ERROR;
@@ -70,13 +70,14 @@ void Game::update() {
 }
 
 void Game::run() {
-    const double frameDelay = 1000 / m_fps;
+    double frameDelay = 0;
 
     Uint32 frameStart;
     double frameTime;
 
 
     while (true) {
+        frameDelay = 1000 / m_fps;
 
         frameStart = SDL_GetTicks();
         // Get the next event
@@ -86,14 +87,15 @@ void Game::run() {
                 break;
             }
         }
-        Game::update();
-        Game::draw();
+        update();
+        draw();
         frameTime = SDL_GetTicks() - frameStart;
 
         if (frameDelay > frameTime) {
 
             SDL_Delay(frameDelay - frameTime);
         }
+
         Time::getInstance().setDeltaTime(SDL_GetTicks() - frameStart);
 
     }
@@ -181,9 +183,15 @@ const std::string &Game::getWindowName() const {
 
 void Game::setWindowName(const std::string &windowName) {
     m_windowName = windowName;
+    SDL_SetWindowTitle(m_window, m_windowName.c_str());
+
 }
 
 GameObject * Game::instanciate(GameObject *gameObject) {
     Game::getInstance()->getCurrentScene().addGameObject(gameObject);
     return gameObject;
+}
+
+double Game::getCurrentFps() {
+    return 1000/Time::getDeltaTime();
 }

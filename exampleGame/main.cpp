@@ -22,7 +22,7 @@ int main(int argc, const char *argv[]) {
     Game::getInstance()->setWindowHeight(600);
     Game::getInstance()->setWindowWidth(800);
 
-    Game::getInstance()->setWindowName("kdo Ronanaeeeeeeeeeeeeeeeeeeeeeeee");
+    Game::getInstance()->setWindowName("My Super Game");
 
     Game::getInstance()->addScene(new ExampleScene());
 

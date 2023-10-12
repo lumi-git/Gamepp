@@ -42,6 +42,8 @@ public:
 
     static GameObject * instanciate(GameObject *gameObject);
 
+    double getCurrentFps();
+
 protected:
     Game(std::string & windowName);
 
