@@ -7,17 +7,17 @@
 #include "../EngineCore/Game.h"
 #include <SDL2/SDL.h>
 #include "../EngineCore/Time.h"
-
+#include "../Debug/Debug.h"
 void ExampleScene::start() {
     //generation of 20000 objects
     SDL_Log("Starting the example scene");
-    for(int i = 0; i < 50000 ; i++)
+    for(int i = 0; i < 10000 ; i++)
         Game::instanciate(new ExampleObject());
 }
 
 void ExampleScene::update() {
 
-    Game::getInstance()->setWindowName(std::to_string(Game::getInstance()->getCurrentFps()) + "fps");
+    Game::getInstance()->setWindowName(std::to_string(Game::getInstance()->getCurrentFps()) + "frame delay in ms");
 }
 
 ExampleScene::ExampleScene() = default;

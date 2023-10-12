@@ -41,7 +41,7 @@ int Game::init() {
         return -1;
     }
 
-    m_renderer = SDL_CreateRenderer(Game::m_window, -1, SDL_RENDERER_ACCELERATED);
+    m_renderer = SDL_CreateRenderer(Game::m_window, -1,SDL_RENDERER_ACCELERATED);
     if (m_renderer == nullptr) {
 
         return DEFAULT_ERROR;
@@ -75,11 +75,12 @@ void Game::run() {
     Uint32 frameStart;
     double frameTime;
 
-
+    int a= 0,b=0,delta=0 ;
     while (true) {
-        frameDelay = 1000 / m_fps;
 
-        frameStart = SDL_GetTicks();
+        a = SDL_GetTicks();
+        delta = a - b;
+
         // Get the next event
         SDL_Event event;
         if (SDL_PollEvent(&event)) {
@@ -87,16 +88,15 @@ void Game::run() {
                 break;
             }
         }
-        update();
-        draw();
-        frameTime = SDL_GetTicks() - frameStart;
 
-        if (frameDelay > frameTime) {
-
-            SDL_Delay(frameDelay - frameTime);
+        if (delta > 1000/m_fps)
+        {
+            Time::getInstance().setDeltaTime(delta);
+            update();
+            draw();
+            b = a;
         }
 
-        Time::getInstance().setDeltaTime(SDL_GetTicks() - frameStart);
 
     }
 }

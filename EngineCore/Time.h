@@ -22,8 +22,8 @@ public:
         return getInstance().deltaTime;
     }
 
-    static void setDeltaTime(double newDeltaTime) {
-        getInstance().deltaTime = newDeltaTime;
+    void setDeltaTime(double newDeltaTime) {
+        deltaTime = newDeltaTime;
     }
 
 };

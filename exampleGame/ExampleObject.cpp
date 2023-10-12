@@ -14,10 +14,7 @@ ExampleObject::ExampleObject(): GameObject() {
 
 void ExampleObject::update() {
 
-    getTransform()->setPosition(Vector2(getTransform()->getPosition().getX() + rand()%3 -1 , getTransform()->getPosition().getY() + rand()%3 -1));
-
-    if(getTransform()->getPosition().getX() > Game::getInstance()->getWindowWidth() || getTransform()->getPosition().getX() < 0 || getTransform()->getPosition().getY() > Game::getInstance()->getWindowHeight() || getTransform()->getPosition().getY() < 0)
-        getTransform()->setPosition(Vector2(Game::getInstance()->getWindowWidth()/2, Game::getInstance()->getWindowHeight()/2));
+    getTransform()->getPosition().setX(getTransform()->getPosition().getX() + 1);
 
 }
 

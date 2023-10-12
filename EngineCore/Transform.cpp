@@ -12,6 +12,7 @@ Transform::Transform() {
 
 
 Transform::~Transform() {
+
 }
 
 Vector2 & Transform::getPosition() {
