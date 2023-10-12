@@ -55,6 +55,8 @@ private:
 
     void run();
 
+    bool pollEvents();
+
     void update();
 
     void draw();

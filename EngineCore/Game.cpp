@@ -70,24 +70,14 @@ void Game::update() {
 }
 
 void Game::run() {
-    double frameDelay = 0;
-
-    Uint32 frameStart;
-    double frameTime;
 
     int a= 0,b=0,delta=0 ;
-    while (true) {
+
+    // Get the next event
+    while (pollEvents()) {
 
         a = SDL_GetTicks();
         delta = a - b;
-
-        // Get the next event
-        SDL_Event event;
-        if (SDL_PollEvent(&event)) {
-            if (event.type == SDL_QUIT) {
-                break;
-            }
-        }
 
         if (delta > 1000/m_fps)
         {
@@ -96,10 +86,19 @@ void Game::run() {
             draw();
             b = a;
         }
-
-
     }
 }
+
+bool Game::pollEvents(){
+    SDL_Event event;
+    if (SDL_PollEvent(&event)) {
+        if (event.type == SDL_QUIT) {
+            return false;
+        }
+    }
+    return true;
+}
+
 
 void Game::end() {
     SDL_DestroyRenderer(m_renderer);
