@@ -1,0 +1,16 @@
+name: Run unit test of the engine
+
+on:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Run test
+      run: docker build . --file Dockerfile --tag my-image-name:$(date +%s)
