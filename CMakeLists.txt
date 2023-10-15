@@ -1,37 +1,37 @@
 cmake_minimum_required(VERSION 3.20)
 
 project(Gamepp)
-set(CMAKE_CXX_STANDARD 11)
-find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
 
-add_executable(
-        Gamepp
-        exampleGame/main.cpp
-        EngineCore/Game.cpp
-        EngineCore/Game.h
-        utils/ErrorsEnum.h
-        utils/Parameters.h
-        EngineCore/Scene.cpp
-        EngineCore/Scene.h
-        EngineCore/GameObject.cpp
-        EngineCore/GameObject.h
-        EngineCore/Component.cpp
-        EngineCore/Component.h
-        EngineCore/DrawRectComponent.cpp
-        EngineCore/DrawRectComponent.h
-        exampleGame/ExampleScene.cpp
-        exampleGame/ExampleScene.h
-        exampleGame/ExampleObject.cpp
-        exampleGame/ExampleObject.h
-        EngineCore/Vector2.cpp
-        EngineCore/Vector2.h
-        EngineCore/Transform.cpp
-        EngineCore/Transform.h
-        Debug/Debug.cpp
-        Debug/Debug.h
-        EngineCore/ComponentType.h
-        EngineCore/Time.cpp
-        EngineCore/Time.h
+# Add SDL2 from the third_party directory
+add_subdirectory(third_party/SDL2)
+
+# Create a library for Gamepp
+add_library(gamepp STATIC
+    src/EngineCore/Game.cpp
+    src/EngineCore/Scene.cpp
+    src/EngineCore/GameObject.cpp
+    src/EngineCore/Component.cpp
+    src/EngineCore/DrawRectComponent.cpp
+    src/EngineCore/Vector2.cpp
+    src/EngineCore/Transform.cpp
+    src/EngineCore/Debug.cpp
+    src/EngineCore/Time.cpp
 )
-target_link_libraries(Gamepp ${SDL2_LIBRARIES})
+
+# Specify include directories for the library
+target_include_directories(gamepp PUBLIC 
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include> 
+    $<INSTALL_INTERFACE:include>
+)
+
+# Link against the built SDL2 library
+target_link_libraries(gamepp PUBLIC SDL2-static)
+
+
+# Installation rules (if you want to install the library to system folders)
+install(TARGETS gamepp
+    ARCHIVE DESTINATION lib
+    LIBRARY DESTINATION lib
+    RUNTIME DESTINATION bin
+)
+install(DIRECTORY include/ DESTINATION include)
