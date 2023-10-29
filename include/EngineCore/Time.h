@@ -4,6 +4,7 @@
 
 #ifndef GAMEPP_TIME_H
 #define GAMEPP_TIME_H
+
 namespace Gamepp {
     class Time {
     private:

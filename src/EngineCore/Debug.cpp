@@ -4,7 +4,7 @@
 
 #include "EngineCore/Debug.h"
 #include <iostream>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 namespace Gamepp{
     void Debug::Logger(const char *message) {

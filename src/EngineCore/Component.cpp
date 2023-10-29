@@ -2,18 +2,22 @@
 // Created by Ronan Tremoureux on 10/10/2023.
 //
 
-#include <SDL2/SDL.h>
+
+#include <SDL.h>
 #include "EngineCore/Component.h"
 #include "EngineCore/GameObject.h"
-#include "Component.h"
 
 namespace Gamepp {
-    Component::Component(GameObject *parent) {
+    Gamepp::Component::Component(GameObject *parent) {
         this->parent = parent;
     }
 
+    Gamepp::Component::Component()
+    {
 
-    void Component::mandatoryDraw(SDL_Renderer *sdlRenderer)
+    }
+
+    void Gamepp::Component::mandatoryDraw(SDL_Renderer *sdlRenderer)
     {
         draw(sdlRenderer);
     }

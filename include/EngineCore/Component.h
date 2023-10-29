@@ -1,14 +1,16 @@
 //
 // Created by Ronan Tremoureux on 10/10/2023.
 //
-
 class GameObject;
 
 #ifndef GAMEPP_COMPONENT_H
 #define GAMEPP_COMPONENT_H
-#include <SDL2/SDL.h>
+#include <SDL.h>
+
 
 namespace Gamepp {
+    class GameObject; // Forward declaration of Component
+
     class Component {
 
     public:

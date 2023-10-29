@@ -3,6 +3,7 @@
 //
 
 #include "EngineCore/GameObject.h"
+#include "EngineCore/Component.h"
 #include <random>
 
 namespace Gamepp {

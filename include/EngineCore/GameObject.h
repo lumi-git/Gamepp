@@ -5,11 +5,13 @@
 #ifndef GAMEPP_GAMEOBJECT_H
 #define GAMEPP_GAMEOBJECT_H
 #include "Transform.h"
-#include "Component.h"
 #include <string>
 #include <vector>
+#include <SDL.h>
 
 namespace Gamepp {
+    class Component; // Forward declaration of Component
+
 class GameObject {
     public:
         GameObject();
