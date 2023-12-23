@@ -5,7 +5,7 @@
 #include "ExampleScene.h"
 #include "ExampleObject.h"
 #include "../EngineCore/Game.h"
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include "../EngineCore/Time.h"
 #include "../Debug/Debug.h"
 void ExampleScene::start() {

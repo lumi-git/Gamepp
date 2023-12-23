@@ -3,7 +3,7 @@
 //
 
 #include "Transform.h"
-#include <SDL2/SDL.h>
+#include <SDL.h>
 Transform::Transform() {
     position = new Vector2();
     scale = new Vector2();

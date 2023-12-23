@@ -3,7 +3,7 @@
 //
 
 #include "ExampleObject.h"
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include "../Debug/Debug.h"
 #include "../EngineCore/DrawRectComponent.h"
 #include "../EngineCore/Time.h"

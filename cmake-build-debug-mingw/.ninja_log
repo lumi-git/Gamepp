@@ -1,0 +1,26 @@
+# ninja log v5
+25	808	7250486021639071	CMakeFiles/Gamepp.dir/EngineCore/DrawRectComponent.cpp.obj	85d6c06375d3c012
+14	792	7250486021458535	CMakeFiles/Gamepp.dir/EngineCore/Component.cpp.obj	370187357effeaa3
+20	883	7250486022399536	CMakeFiles/Gamepp.dir/EngineCore/Scene.cpp.obj	e1d90d53df9f1c3a
+57	950	7250486023076587	CMakeFiles/Gamepp.dir/EngineCore/Vector2.cpp.obj	e074362e03980507
+31	1113	7250486024690015	CMakeFiles/Gamepp.dir/EngineCore/GameObject.cpp.obj	978e694d67998060
+18	104	7250486251540306	CMakeFiles/Gamepp.dir/EngineCore/Time.cpp.obj	9c384019e6e30563
+64	1839	7250486031956093	CMakeFiles/Gamepp.dir/EngineCore/Transform.cpp.obj	58a07b13019233f
+12	1607	7250486266566632	CMakeFiles/Gamepp.dir/exampleGame/ExampleObject.cpp.obj	6dd5273ce981cbc6
+45	1875	7250486032319038	CMakeFiles/Gamepp.dir/exampleGame/ExampleScene.cpp.obj	f6d35daeec647471
+5	1720	7250486267707325	CMakeFiles/Gamepp.dir/EngineCore/Game.cpp.obj	a01eb5a52826e224
+10	1947	7250486033028874	CMakeFiles/Gamepp.dir/exampleGame/main.cpp.obj	47f65842bb4c184d
+24	1697	7250486267455249	CMakeFiles/Gamepp.dir/Debug/Debug.cpp.obj	a77369a3d95b4d46
+10	594	7250489747633735	CMakeFiles/Gamepp.dir/EngineCore/Component.cpp.obj	bc04fcb41cfc4ff9
+26	699	7250489748594235	CMakeFiles/Gamepp.dir/EngineCore/Scene.cpp.obj	2f4ac93f0185de03
+47	789	7250489749350237	CMakeFiles/Gamepp.dir/EngineCore/DrawRectComponent.cpp.obj	c55fddad9d30b290
+595	850	7250489749916723	CMakeFiles/Gamepp.dir/EngineCore/Time.cpp.obj	760797ca0e621ded
+58	906	7250489750733699	CMakeFiles/Gamepp.dir/EngineCore/Vector2.cpp.obj	5a3cddc500dca55a
+15	1085	7250489752592718	CMakeFiles/Gamepp.dir/EngineCore/GameObject.cpp.obj	ea5f090e3e5193e5
+33	1938	7250489761136182	CMakeFiles/Gamepp.dir/exampleGame/ExampleObject.cpp.obj	a32f9d68afc0bdf
+39	2056	7250489762270529	CMakeFiles/Gamepp.dir/exampleGame/ExampleScene.cpp.obj	fb82a24a8268f70c
+5	2103	7250489762761291	CMakeFiles/Gamepp.dir/exampleGame/main.cpp.obj	8a065ed1c4a6c535
+21	2117	7250489762910165	CMakeFiles/Gamepp.dir/EngineCore/Game.cpp.obj	3ad6d54b1d9a4faf
+66	2151	7250489763261887	CMakeFiles/Gamepp.dir/Debug/Debug.cpp.obj	99f91cdd3069b445
+700	2377	7250489765541214	CMakeFiles/Gamepp.dir/EngineCore/Transform.cpp.obj	23fd57b83e9b1fad
+2378	2541	7250489767108298	Gamepp.exe	15f1a0a0fce70a25

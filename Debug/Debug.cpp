@@ -4,7 +4,7 @@
 
 #include "Debug.h"
 #include <iostream>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 void Debug::log(const char *message) {
     SDL_Log("%s", message);
 }

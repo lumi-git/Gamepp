@@ -4,7 +4,7 @@
 
 #include "Game.h"
 #include <string>
-#include <SDL2/SDL.h>
+#include <SDL.h>
 #include "../utils/ErrorsEnum.h"
 #include "../utils/Parameters.h"
 #include "Time.h"

@@ -11,7 +11,7 @@
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdocumentation"
 
-#include <SDL2/SDL.h>
+#include <SDL.h>
 
 #pragma clang diagnostic pop
 

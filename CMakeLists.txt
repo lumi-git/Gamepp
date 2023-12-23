@@ -2,8 +2,13 @@ cmake_minimum_required(VERSION 3.20)
 
 project(Gamepp)
 set(CMAKE_CXX_STANDARD 11)
-find_package(SDL2 REQUIRED)
-include_directories(${SDL2_INCLUDE_DIRS})
+
+# Include directories for SDL2
+include_directories(${CMAKE_SOURCE_DIR}/third_party/SDL2/include)
+
+# SDL2 Libraries
+set(SDL2_LIBRARIES "${CMAKE_SOURCE_DIR}/third_party/SDL2/lib/x64/SDL2.lib")
+set(SDL2MAIN_LIBRARIES "${CMAKE_SOURCE_DIR}/third_party/SDL2/lib/x64/SDL2main.lib")
 
 add_executable(
         Gamepp
@@ -34,4 +39,8 @@ add_executable(
         EngineCore/Time.cpp
         EngineCore/Time.h
 )
-target_link_libraries(Gamepp ${SDL2_LIBRARIES})
+# Add a preprocessor definition to avoid SDL redefining main
+target_compile_definitions(Gamepp PRIVATE SDL_MAIN_HANDLED)
+
+target_link_libraries(Gamepp ${SDL2_LIBRARIES} ${SDL2MAIN_LIBRARIES})
+
